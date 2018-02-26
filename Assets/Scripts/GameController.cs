@@ -1,26 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Entitas;
+﻿using Entitas;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
-	private Systems _systems;
+public class GameController : MonoBehaviour
+{
+    private Systems _systems;
 
-	// Use this for initialization
-    void Start ()
+    // Use this for initialization
+    void Start()
     {
-	    var contexts = Contexts.sharedInstance;
-	    
-	    _systems = new Feature("System")
-		    .Add(new TutorialSystems(contexts));
-	    
-	    _systems.Initialize();
+        var contexts = Contexts.sharedInstance;
+
+        _systems = new Feature("System")
+                   /*.Add(new TestFeature(contexts))*/
+                   .Add(new TutorialSystems(contexts));
+        
+        _systems.Initialize();
     }
-	
+
     // Update is called once per frame
-    void Update () {
-		_systems.Execute();
-	    
-	    _systems.Cleanup();
+    void Update()
+    {
+        _systems.Execute();
+        
+        _systems.Cleanup();
     }
 }

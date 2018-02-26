@@ -1,5 +1,5 @@
 ﻿using  Entitas;
-public class HelloWorldSystem :IInitializeSystem
+public class HelloWorldSystem :IInitializeSystem 
 {
     private readonly GameContext _context;
 

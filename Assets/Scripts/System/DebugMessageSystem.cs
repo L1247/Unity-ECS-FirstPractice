@@ -6,10 +6,6 @@ public class DebugMessageSystem : ReactiveSystem<GameEntity>
 {
     public DebugMessageSystem(Contexts contexts) : base(contexts.game){}
 
-    public DebugMessageSystem(ICollector<GameEntity> collector) : base(collector)
-    {
-    }
-
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
         return context.CreateCollector(GameMatcher.DebugMessage);
