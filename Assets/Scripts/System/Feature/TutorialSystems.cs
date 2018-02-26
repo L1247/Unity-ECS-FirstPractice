@@ -10,6 +10,7 @@ public class TutorialSystems : Feature
         Add(new EmitInputSystem(contexts));
         Add(new CreateMoverSystem(contexts));
         Add(new AddViewSystem(contexts));
+        Add(new MiddleMouseKeyChangeSpriteSystem(contexts));
         Add(new RenderSpriteSystem(contexts));
         Add(new RenderPositionSystem(contexts));
         Add(new RenderDirectionSystem(contexts));
