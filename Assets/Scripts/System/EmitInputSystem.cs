@@ -26,12 +26,12 @@ public class EmitInputSystem :IInitializeSystem,IExecuteSystem
     // 在leftMouse和rightMouse的Entity上添加或替换Position的组件
     public void Execute()
     {
-        // 根据当前鼠标位置获取世界坐标
-//        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
- 
+//         根据当前鼠标位置获取世界坐标
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         // 处理左右点击
-        replacePositionProcess(_leftMouseEntity,  0, Input.mousePosition);
-        replacePositionProcess(_rightMouseEntity, 1, Input.mousePosition);
+        replacePositionProcess(_leftMouseEntity,  0, mousePosition);
+        replacePositionProcess(_rightMouseEntity, 1, mousePosition);
     }
  
     // 根据点击状态和鼠标的位置替换位置组件

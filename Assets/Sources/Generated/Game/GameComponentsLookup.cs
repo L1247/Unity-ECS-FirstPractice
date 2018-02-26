@@ -9,20 +9,41 @@
 public static class GameComponentsLookup {
 
     public const int DebugMessage = 0;
-    public const int Health = 1;
-    public const int Postion = 2;
+    public const int Direction = 1;
+    public const int Health = 2;
+    public const int MoveComplete = 3;
+    public const int Move = 4;
+    public const int Mover = 5;
+    public const int Position = 6;
+    public const int Postion = 7;
+    public const int Sprite = 8;
+    public const int View = 9;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "DebugMessage",
+        "Direction",
         "Health",
-        "Postion"
+        "MoveComplete",
+        "Move",
+        "Mover",
+        "Position",
+        "Postion",
+        "Sprite",
+        "View"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(DebugMessageComponent),
+        typeof(DirectionComponent),
         typeof(HealthComponent),
-        typeof(PostionComponent)
+        typeof(MoveCompleteComponent),
+        typeof(MoveComponent),
+        typeof(MoverComponent),
+        typeof(PositionComponent),
+        typeof(PostionComponent),
+        typeof(SpriteComponent),
+        typeof(ViewComponent)
     };
 }
