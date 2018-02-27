@@ -27,11 +27,11 @@ public class CreateMoverSystem : ReactiveSystem<InputEntity>
     {
         foreach (InputEntity inputEntity in entities)
         {
-            GameEntity mover = _gameContext.CreateEntity();
-            mover.isMover = true;
-            mover.AddPosition(inputEntity.mouseDown.position);
-            mover.AddDirection(Random.Range(0,360));
-            mover.AddSprite("head1");
+            GameEntity entity = _gameContext.CreateEntity();
+            entity.isMover = true;
+            entity.AddPosition(inputEntity.mouseDown.position);
+            entity.AddDirection(Random.Range(0,360));
+            entity.AddSprite("head1");
         }
     }
 }

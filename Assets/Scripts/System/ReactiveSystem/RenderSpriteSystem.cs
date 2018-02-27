@@ -1,33 +1,33 @@
-﻿    using System.Collections.Generic;
-    using Entitas;
-    using UnityEngine;
+﻿using System.Collections.Generic;
+using Entitas;
+using UnityEngine;
 
 public class RenderSpriteSystem : ReactiveSystem<GameEntity>
+{
+    public RenderSpriteSystem(Contexts contexts) : base(contexts.game)
     {
-        public RenderSpriteSystem(Contexts contexts) : base(contexts.game)
-        {
-        }
+    }
 
-        protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-        {
-            return context.CreateCollector(GameMatcher.Sprite);
-        }
+    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    {
+        return context.CreateCollector(GameMatcher.Sprite);
+    }
 
-        protected override bool Filter(GameEntity entity)
-        {
-            return entity.hasSprite && entity.hasView;
-        }
+    protected override bool Filter(GameEntity entity)
+    {
+        return entity.hasSprite && entity.hasView;
+    }
 
-        protected override void Execute(List<GameEntity> entities)
+    protected override void Execute(List<GameEntity> entities)
+    {
+        foreach (GameEntity gameEntity in entities)
         {
-            foreach (GameEntity gameEntity in entities)
-            {
-                GameObject go = gameEntity.view.gameObject;
+            GameObject go = gameEntity.view.gameObject;
 
-                SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
-                if (sr == null) sr = go.AddComponent<SpriteRenderer>();
+            SpriteRenderer sr  = go.GetComponent<SpriteRenderer>();
+            if (sr == null) sr = go.AddComponent<SpriteRenderer>();
                 
-                sr.sprite = Resources.Load<Sprite>(gameEntity.sprite.name);
-            }
+            sr.sprite = Resources.Load<Sprite>(gameEntity.sprite.name);
         }
     }
+}

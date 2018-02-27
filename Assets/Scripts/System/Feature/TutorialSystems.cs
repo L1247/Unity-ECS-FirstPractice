@@ -1,25 +1,27 @@
-﻿using UnityEngine;
-
-public class TutorialSystems : Feature
+﻿public class TutorialSystems : Feature
 {
     public TutorialSystems(Contexts contexts) : base("Tutorial System")
     {
-        Add(new HelloWorldSystem(contexts));  
+        // Log Hollo Wolod
+        //        Add(new HelloWorldSystem(contexts));  
         // Create Log Message.
-//        Add(new LogMouseClickSystem(contexts));
+        //        Add(new LogMouseClickSystem(contexts));
+
+        #region Create Movable Sprite And Follow Mouse Down Position.
         Add(new EmitInputSystem(contexts));
         Add(new CreateMoverSystem(contexts));
         Add(new AddViewSystem(contexts));
-        Add(new MiddleMouseKeyChangeSpriteSystem(contexts));
         Add(new RenderSpriteSystem(contexts));
         Add(new RenderPositionSystem(contexts));
         Add(new RenderDirectionSystem(contexts));
         Add(new CommandMoveSystem(contexts));
         Add(new MoveSystem(contexts));
+        Add(new MiddleMouseKeyChangeSpriteSystem(contexts));
+        #endregion
+        
         // Display Message.
         Add(new DebugMessageSystem(contexts));
         // Cleanup All Debug Messages.
         Add(new CleanupDebugMessageSystem(contexts));
     }
 }
-
