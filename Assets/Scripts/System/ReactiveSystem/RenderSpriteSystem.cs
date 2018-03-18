@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
+using Utility;
 
 public class RenderSpriteSystem : ReactiveSystem<GameEntity>
 {
@@ -27,7 +28,8 @@ public class RenderSpriteSystem : ReactiveSystem<GameEntity>
             SpriteRenderer sr  = go.GetComponent<SpriteRenderer>();
             if (sr == null) sr = go.AddComponent<SpriteRenderer>();
                 
-            sr.sprite = Resources.Load<Sprite>(gameEntity.sprite.name);
+            //            sr.sprite = Resources.Load<Sprite>(gameEntity.sprite.name);
+            sr.sprite = Resources.Load<Sprite>(GameUtility.SpriteName);
         }
     }
 }

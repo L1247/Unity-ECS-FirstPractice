@@ -1,7 +1,9 @@
 ﻿// MiddleMouseKeyChangeSpriteSystem.cs  
 using UnityEngine;  
-using Entitas;  
-  
+using Entitas;
+using UnityEditor;
+using Utility;
+
 public class MiddleMouseKeyChangeSpriteSystem : IExecuteSystem  
 {  
     readonly IGroup<GameEntity> _sprites;  
@@ -15,8 +17,9 @@ public class MiddleMouseKeyChangeSpriteSystem : IExecuteSystem
     // 如果按下的中键，则替换  
     public void Execute()  
     {  
-        if(Input.GetMouseButtonDown(2))  
-        {  
+        if(Input.GetMouseButtonDown(2))
+        {
+            GameUtility.SpriteName = "head2";
             foreach(var e in _sprites.GetEntities())  
             {  
                 e.ReplaceSprite("head2");

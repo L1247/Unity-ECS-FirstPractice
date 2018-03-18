@@ -1,4 +1,6 @@
-﻿public class TutorialSystems : Feature
+﻿using System;
+
+public class TutorialSystems : Feature
 {
     public TutorialSystems(Contexts contexts) : base("Tutorial System")
     {
@@ -8,7 +10,10 @@
         //        Add(new LogMouseClickSystem(contexts));
 
         #region Create Movable Sprite And Follow Mouse Down Position.
+
+        Add(new GameInitializeSystem());
         Add(new EmitInputSystem(contexts));
+        Add(new MiddleMouseKeyChangeSpriteSystem(contexts));
         Add(new CreateMoverSystem(contexts));
         Add(new AddViewSystem(contexts));
         Add(new RenderSpriteSystem(contexts));
@@ -16,7 +21,6 @@
         Add(new RenderDirectionSystem(contexts));
         Add(new CommandMoveSystem(contexts));
         Add(new MoveSystem(contexts));
-        Add(new MiddleMouseKeyChangeSpriteSystem(contexts));
         #endregion
         
         // Display Message.
