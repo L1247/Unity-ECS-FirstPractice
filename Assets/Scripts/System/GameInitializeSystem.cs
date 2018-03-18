@@ -11,7 +11,8 @@ namespace System
         
         public void Initialize()
         {
-            GameUtility.SpriteName = "head1";
+//            GameUtility.SpriteName = "head1";
+            _gameContext.ReplaceSpriteName("head1");
         }
     }
 }

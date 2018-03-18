@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using Entitas.CodeGeneration.Attributes;
 using UnityEngine;
 
 [Game]
@@ -30,6 +31,12 @@ public class SpriteComponent : IComponent
 {
     public string name;
 }
+
+[Game]
+public class SpriteRenderComponent : IComponent{}
+
+[Game,Unique]
+public class SpriteNameComponent : IComponent{public string value;}
 
 [Game]
 public class MoveComponent : IComponent

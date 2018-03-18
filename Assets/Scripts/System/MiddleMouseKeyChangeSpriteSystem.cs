@@ -6,11 +6,13 @@ using Utility;
 
 public class MiddleMouseKeyChangeSpriteSystem : IExecuteSystem  
 {  
-    readonly IGroup<GameEntity> _sprites;  
-  
+    readonly IGroup<GameEntity> _sprites;
+
+    private GameContext _gameContext;  
     // 获取所有拥有Sprite的组  
-    public MiddleMouseKeyChangeSpriteSystem(Contexts contexts)  
-    {  
+    public MiddleMouseKeyChangeSpriteSystem(Contexts contexts)
+    {
+        _gameContext = contexts.game;
         _sprites = contexts.game.GetGroup(GameMatcher.Sprite);  
     }  
   
@@ -19,11 +21,12 @@ public class MiddleMouseKeyChangeSpriteSystem : IExecuteSystem
     {  
         if(Input.GetMouseButtonDown(2))
         {
-            GameUtility.SpriteName = "head2";
-            foreach(var e in _sprites.GetEntities())  
-            {  
-                e.ReplaceSprite("head2");
-            }  
+//            GameUtility.SpriteName = "head2";
+//            foreach(var e in _sprites.GetEntities())  
+//            {  
+//                e.ReplaceSprite("head2");
+//            }
+            _gameContext.ReplaceSpriteName("head2");
         }  
     }  
 }  

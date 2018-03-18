@@ -31,7 +31,8 @@ public class CreateMoverSystem : ReactiveSystem<InputEntity>
             entity.isMover = true;
             entity.AddPosition(inputEntity.mouseDown.position);
             entity.AddDirection(Random.Range(0,360));
-            entity.AddSprite("head1");
+//            entity.AddSprite("head1");
+            entity.isSpriteRender = true;
         }
     }
 }

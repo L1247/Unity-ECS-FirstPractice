@@ -16,12 +16,12 @@ public class AddViewSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Sprite);
+        return context.CreateCollector(GameMatcher.SpriteRender);
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasSprite && !entity.hasView ;
+        return entity.isSpriteRender && !entity.hasView ;
     }
 
     protected override void Execute(List<GameEntity> entities)
