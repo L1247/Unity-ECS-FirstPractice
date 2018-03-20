@@ -23,14 +23,14 @@ public partial class Contexts : Entitas.IContexts {
 
     public GameContext game { get; set; }
     public InputContext input { get; set; }
-    public TestContext test { get; set; }
+    public UiContext ui { get; set; }
 
-    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { game, input, test }; } }
+    public Entitas.IContext[] allContexts { get { return new Entitas.IContext [] { game, input, ui }; } }
 
     public Contexts() {
         game = new GameContext();
         input = new InputContext();
-        test = new TestContext();
+        ui = new UiContext();
 
         var postConstructors = System.Linq.Enumerable.Where(
             GetType().GetMethods(),
@@ -67,7 +67,7 @@ public partial class Contexts {
         try {
             CreateContextObserver(game);
             CreateContextObserver(input);
-            CreateContextObserver(test);
+            CreateContextObserver(ui);
         } catch(System.Exception) {
         }
     }

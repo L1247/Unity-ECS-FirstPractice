@@ -8,23 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int DebugMessage = 0;
-    public const int Direction = 1;
-    public const int Health = 2;
-    public const int MoveComplete = 3;
-    public const int Move = 4;
-    public const int Mover = 5;
-    public const int Position = 6;
-    public const int Postion = 7;
-    public const int Sprite = 8;
-    public const int SpriteName = 9;
-    public const int SpriteRender = 10;
-    public const int View = 11;
+    public const int AssignView = 0;
+    public const int DebugMessage = 1;
+    public const int Destroyed = 2;
+    public const int Direction = 3;
+    public const int Health = 4;
+    public const int MoveComplete = 5;
+    public const int Move = 6;
+    public const int Mover = 7;
+    public const int Position = 8;
+    public const int Postion = 9;
+    public const int Sprite = 10;
+    public const int SpriteName = 11;
+    public const int SpriteRender = 12;
+    public const int View = 13;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
+        "AssignView",
         "DebugMessage",
+        "Destroyed",
         "Direction",
         "Health",
         "MoveComplete",
@@ -39,7 +43,9 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AssignViewComponent),
         typeof(DebugMessageComponent),
+        typeof(DestroyedComponent),
         typeof(DirectionComponent),
         typeof(HealthComponent),
         typeof(MoveCompleteComponent),

@@ -14,10 +14,15 @@ public class DirectionComponent : IComponent
     public float value;
 }
 
-[Game]
+[Game,Input,Ui]
 public class ViewComponent : IComponent
 {
     public GameObject gameObject;
+}
+
+[Game, Input, Ui]
+public class AssignViewComponent : IComponent
+{
 }
 
 // GameObject是否是Mover的标志  
