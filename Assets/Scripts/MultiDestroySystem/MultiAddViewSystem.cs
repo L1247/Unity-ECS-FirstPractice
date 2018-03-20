@@ -22,7 +22,6 @@ public class MultiAddViewSystem: MultiReactiveSystem<IviewEntity, Contexts>
         foreach (var context in contexts.allContexts)
         {
             string contextName = context.contextInfo.name;
-            Debug.Log(contextName);
             Transform contextViewContainer = new GameObject(contextName + " Views").transform;
             contextViewContainer.SetParent(_topViewContainer);
             _viewContainers.Add(contextName, contextViewContainer);
