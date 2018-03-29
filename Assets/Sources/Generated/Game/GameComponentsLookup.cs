@@ -9,53 +9,77 @@
 public static class GameComponentsLookup {
 
     public const int AssignView = 0;
-    public const int DebugMessage = 1;
-    public const int Destroyed = 2;
-    public const int Direction = 3;
-    public const int Health = 4;
-    public const int MoveComplete = 5;
-    public const int Move = 6;
-    public const int Mover = 7;
-    public const int Position = 8;
-    public const int Postion = 9;
-    public const int Sprite = 10;
-    public const int SpriteName = 11;
-    public const int SpriteRender = 12;
-    public const int View = 13;
+    public const int Bullet = 1;
+    public const int DebugMessage = 2;
+    public const int Destroy = 3;
+    public const int Destroyed = 4;
+    public const int Direction = 5;
+    public const int EditorOnlyVisual = 6;
+    public const int Faction = 7;
+    public const int Health = 8;
+    public const int MoveComplete = 9;
+    public const int Move = 10;
+    public const int Mover = 11;
+    public const int Name = 12;
+    public const int Position2 = 13;
+    public const int Position = 14;
+    public const int Postion = 15;
+    public const int Scene = 16;
+    public const int Sprite = 17;
+    public const int SpriteName = 18;
+    public const int SpriteRender = 19;
+    public const int Velocity2 = 20;
+    public const int View = 21;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 22;
 
     public static readonly string[] componentNames = {
         "AssignView",
+        "Bullet",
         "DebugMessage",
+        "Destroy",
         "Destroyed",
         "Direction",
+        "EditorOnlyVisual",
+        "Faction",
         "Health",
         "MoveComplete",
         "Move",
         "Mover",
+        "Name",
+        "Position2",
         "Position",
         "Postion",
+        "Scene",
         "Sprite",
         "SpriteName",
         "SpriteRender",
+        "Velocity2",
         "View"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(AssignViewComponent),
+        typeof(BulletComponent),
         typeof(DebugMessageComponent),
+        typeof(DestroyComponent),
         typeof(DestroyedComponent),
         typeof(DirectionComponent),
+        typeof(EditorOnlyVisualComponent),
+        typeof(FactionComponent),
         typeof(HealthComponent),
         typeof(MoveCompleteComponent),
         typeof(MoveComponent),
         typeof(MoverComponent),
+        typeof(NameComponent),
+        typeof(Position2Component),
         typeof(PositionComponent),
         typeof(PostionComponent),
+        typeof(SceneComponent),
         typeof(SpriteComponent),
         typeof(SpriteNameComponent),
         typeof(SpriteRenderComponent),
+        typeof(Velocity2Component),
         typeof(ViewComponent)
     };
 }
