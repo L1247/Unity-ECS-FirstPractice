@@ -21,11 +21,14 @@ public class TutorialSystems : Feature
         Add(new RenderDirectionSystem(contexts));
         Add(new CommandMoveSystem(contexts));
         Add(new MoveSystem(contexts));
+        Add(new MultiDestroySystem(contexts));
+        Add(new MultiAddViewSystem(contexts));
+
         #endregion
-        
+
         // Display Message.
-        Add(new DebugMessageSystem(contexts));
+        //        Add(new DebugMessageSystem(contexts));
         // Cleanup All Debug Messages.
-        Add(new CleanupDebugMessageSystem(contexts));
+        //        Add(new CleanupDebugMessageSystem(contexts));
     }
 }
