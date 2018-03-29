@@ -8,48 +8,72 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int DebugMessage = 0;
-    public const int Direction = 1;
-    public const int Health = 2;
-    public const int MoveComplete = 3;
-    public const int Move = 4;
-    public const int Mover = 5;
-    public const int Position = 6;
-    public const int Postion = 7;
-    public const int Sprite = 8;
-    public const int SpriteName = 9;
-    public const int SpriteRender = 10;
-    public const int View = 11;
+    public const int Bullet = 0;
+    public const int DebugMessage = 1;
+    public const int Destroy = 2;
+    public const int Direction = 3;
+    public const int EditorOnlyVisual = 4;
+    public const int Faction = 5;
+    public const int Health = 6;
+    public const int MoveComplete = 7;
+    public const int Move = 8;
+    public const int Mover = 9;
+    public const int Name = 10;
+    public const int Position2 = 11;
+    public const int Position = 12;
+    public const int Postion = 13;
+    public const int Scene = 14;
+    public const int Sprite = 15;
+    public const int SpriteName = 16;
+    public const int SpriteRender = 17;
+    public const int Velocity2 = 18;
+    public const int View = 19;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
+        "Bullet",
         "DebugMessage",
+        "Destroy",
         "Direction",
+        "EditorOnlyVisual",
+        "Faction",
         "Health",
         "MoveComplete",
         "Move",
         "Mover",
+        "Name",
+        "Position2",
         "Position",
         "Postion",
+        "Scene",
         "Sprite",
         "SpriteName",
         "SpriteRender",
+        "Velocity2",
         "View"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(BulletComponent),
         typeof(DebugMessageComponent),
+        typeof(DestroyComponent),
         typeof(DirectionComponent),
+        typeof(EditorOnlyVisualComponent),
+        typeof(FactionComponent),
         typeof(HealthComponent),
         typeof(MoveCompleteComponent),
         typeof(MoveComponent),
         typeof(MoverComponent),
+        typeof(NameComponent),
+        typeof(Position2Component),
         typeof(PositionComponent),
         typeof(PostionComponent),
+        typeof(SceneComponent),
         typeof(SpriteComponent),
         typeof(SpriteNameComponent),
         typeof(SpriteRenderComponent),
+        typeof(Velocity2Component),
         typeof(ViewComponent)
     };
 }
